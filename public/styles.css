@@ -1,0 +1,143 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Permanent Marker', Arial, Helvetica, sans-serif;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: rgb(126, 20, 24);
+  color: white;
+}
+h3{
+  margin-top: 40px;
+}
+
+img{
+  width: 80%
+}
+
+ul{
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+
+li{
+  width: 100%;
+  border: 2px solid rgb(25, 33, 35);
+  margin: 10px 0%;
+  background-color: rgba(42, 63, 54, 0.75);
+  color: white;
+}
+
+li div{
+  display: inline-block;
+  height: auto;
+}
+
+section{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+.img-cont{
+  display: inline-block;
+  width: 25%;
+}
+
+.info-cont{
+  display: inline-block;
+  width: 60%;
+}
+
+
+
+.rating-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color:rgb(126, 159, 132);
+  margin-top: 5px;
+}
+
+.fav-list, .game-list{
+  width: 45%;
+  max-height: 700px;
+  background-color:rgb(206, 29, 47) ;
+  border-radius: 15px;
+  margin-top: 15px; 
+  overflow: auto;
+}
+
+.star-color{
+  color:gold;
+}
+
+.add-game{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info{
+  width: 50%;
+}
+.game-info input{
+  margin: 0.5%;
+  border-radius: 15px;
+  padding: 0px 1%;
+  font-size: 1.5rem;
+}
+
+.game-info button{
+  border-radius: 15px;
+  padding: 0px 1%;
+  font-size: 1.5rem;
+  width: 10%;
+}
+
+.main-title, .title, .studio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  font-size: 2.2rem;
+}
+
+.main-title h1{
+  font-size: 3rem;  
+}
+
+.studio{
+  font-size: 1.7rem;
+  margin: 0;
+
+}
+
+
+.list-titles{
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.favs, .games{
+  padding: 2%;
+}
+
+.game{
+  width: 100%;
+}
+
+.game, .fav, .rating-cont{
+  border-radius: 15px;
+  padding: 1%;
+  font-size: 1.3rem;
+}

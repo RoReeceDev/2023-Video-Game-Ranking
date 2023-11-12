@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>2023 Video Game Ranking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+ <!-- <link rel="shortcut icon" href="favicon.ico">-->
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="main-title">
+    <h1>2023 Video Game Ranking</h1>
+    <h2>Add a video game to the list if you don't see your choices on the list, if you do you can either down vote or up
+      vote, or add to your favorites list to track.</h2>
+  </div>
+  <div class="add-game">
+    <h2>Add a 2023 Video Game (please games from 2023 only and game cover no NSFW images!):</h2>
+
+    <form class="game-info" action="/games" method="POST">
+      <input type="text" placeholder="title" name="title">
+      <input type="text" placeholder="studio" name="studio">
+      <input type="text" placeholder="game cover image url" name="image">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <section>
+    <div class="game-list">
+      <h3 class="list-titles">Vote on Games of The Year (2023)!</h3>
+      <ul class="games">
+        <% for(var i=0; i<games.length; i++) {%>
+          <li class="game">
+            <div class="img-cont"><img src="<%= games[i].coverImg %>" /></div>
+            <div class="info-cont">
+              <h2 class="title">
+                <%= games[i].title %>
+              </h2>
+              <h4 class="studio">
+                <%= games[i].studio %>
+              </h4>
+            </div>
+            <div class="rating-cont">
+              <span><i class="fa fa-regular fa-star" aria-hidden="true"></i><span>
+                  <span class="up-votes">
+                    <%= games[i].upVote %>
+                  </span>
+                  <span class="upvote"><i class=" fa fa-solid fa-arrow-up" aria-hidden="true"></i></span>
+                  <span class="down-votes">
+                    <%= games[i].downVote %>
+                  </span>
+                  <span><i class="fa fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+                  <span><i class="rank-delete fa fa-trash" aria-hidden="true"></i></span>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+    </div>
+    <div class="fav-list">
+      <h3 class="list-titles">Favorite Games of 2023</h3>
+      <ul class="favs">
+        <% for(var i=0; i<games.length; i++) { %>
+          <% if (games[i].favorite===true) { %>
+            <li class="fav">
+              <div class="img-cont"><img src="<%= games[i].coverImg %>" /></div>
+              <div class="info-cont">
+                <h2 class="title">
+                  <%= games[i].title %>
+                </h2>
+                <h4 class="studio">
+                  <%= games[i].studio %>
+                </h4>
+              </div>
+              <div class="rating-cont">
+                <span><i class="star-color fa fa-regular fa-star" aria-hidden="true"></i></span>
+                <span class="up-votes">
+                  <%= games[i].upVote %>
+                </span>
+                <span class="upvote"><i class=" fa fa-solid fa-arrow-up" aria-hidden="true"></i></span>
+                <span class="down-votes">
+                  <%= games[i].downVote %>
+                </span>
+                <span><i class="fa fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+              </div>
+            </li>
+            <% } %>
+              <% } %>
+      </ul>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
