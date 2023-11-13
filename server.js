@@ -5,10 +5,10 @@ const MongoClient = require('mongodb').MongoClient
 
 var db, collection;
 
-const url = "mongodb+srv://roreecedev:week11project@2023gameoftheyear.i3mtf4b.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://roreecedev:savdemo@cluster4.0silzty.mongodb.net/2023GamesofTheYear?retryWrites=true&w=majority";
 const dbName = "2023GamesofTheYear";
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
@@ -37,7 +37,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/games', (req, res) => {
-  console.log(req)
   db.collection('games').insertOne({title: req.body.title, studio: req.body.studio, coverImg: req.body.image, upVote: 0, downVote:0, favorite: false}, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
@@ -49,6 +48,10 @@ app.post('/games', (req, res) => {
 app.put('/games/favorite', (req, res) => {
   const title = req.body.title;
   const studio = req.body.studio;
+
+  console.log(title)
+  console.log(studio)
+  console.log(req.body)
 
   db.collection('games')
     .findOne({ title, studio }, (err, game) => {
@@ -90,6 +93,7 @@ app.put('/games/favorite', (req, res) => {
 // })
 
 app.put('/games', (req, res) => {
+  console.log(res.body)
   db.collection('games')
   .findOneAndUpdate({title: req.body.title, studio: req.body.studio}, {
     $set: {
