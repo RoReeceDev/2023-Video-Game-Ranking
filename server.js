@@ -8,7 +8,7 @@ var db, collection;
 const url = "mongodb+srv://roreecedev:week11project@2023gameoftheyear.i3mtf4b.mongodb.net/?retryWrites=true&w=majority";
 const dbName = "2023GamesofTheYear";
 
-app.listen(4000, () => {
+app.listen(3000, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
