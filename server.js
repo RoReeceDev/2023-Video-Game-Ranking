@@ -8,7 +8,7 @@ var db, collection;
 const url = "mongodb+srv://roreecedev:savdemo@cluster4.0silzty.mongodb.net/2023GamesofTheYear?retryWrites=true&w=majority";
 const dbName = "2023GamesofTheYear";
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
@@ -76,21 +76,6 @@ app.put('/games/favorite', (req, res) => {
 
 
 
-
-// app.put('/messages/favorite', (req, res) => {
-//   db.collection('games')
-//   .findOneAndUpdate({title: req.body.title, studio: req.body.studio}, {
-//     $set: {
-//       favorite:true
-//     }
-//   }, {
-//     sort: {_id: -1},
-//     upsert: true
-//   }, (err, result) => {
-//     if (err) return res.send(err)
-//     res.send(result)
-//   })
-// })
 
 app.put('/games', (req, res) => {
   console.log(res.body)
