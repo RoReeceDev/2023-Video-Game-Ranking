@@ -2,13 +2,15 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
+const PORT = process.env.PORT || 5000
 
 var db, collection;
 
 const url = "mongodb+srv://roreecedev:savdemo@cluster4.0silzty.mongodb.net/2023GamesofTheYear?retryWrites=true&w=majority";
 const dbName = "2023GamesofTheYear";
 
-app.listen(5000, () => {
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server listening on port ${PORT}`)
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
