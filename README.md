@@ -4,6 +4,8 @@ Welcome to my 2023 Video Game Ranking project! This web application allows users
 
 **Link to Project:** 
 
+https://goty-ranking2023.up.railway.app/
+
 ![2023 Game Of The Year Gif](public/2023game.gif)
 
 ## How It's Made
